@@ -10,15 +10,28 @@ body {
     align-items: center;
     height: 100vh;
     
-    /* CAPA 1: Patrón repetitivo de siluetas de patines integradas sutilmente en el fondo */
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://w3.org' width='80' height='80' viewBox='0 0 100 100'%3E%3Cpath d='M20,70 L40,70 L50,40 L35,20 L25,20 L20,40 Z M30,75 A5,5 0 1,1 30,85 A5,5 0 1,1 30,75 M45,75 A5,5 0 1,1 45,85 A5,5 0 1,1 45,75' fill='%23ffffff' fill-opacity='0.12'/%3E%3C/svg%3E"), 
-    
-    /* CAPA 2: Degradado suave que fusiona el azul cian con el beige cálido */
-    linear-gradient(135deg, #f3ede2 0%, #a2dce4 50%, #4daec2 100%);
+    /* Degradado base que combina el beige suave (arriba izquierda) con el azul patinaje (abajo derecha) */
+    background-color: #f3ede2;
+    background-image: linear-gradient(135deg, #f3ede2 0%, #a2dce4 50%, #4daec2 100%);
     
     font-family: 'Montserrat', sans-serif;
     overflow: hidden;
     position: relative;
+}
+
+/* Capa independiente para los patines integrados en el fondo */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Patrón de siluetas de patines en formato de alta compatibilidad */
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDEwMCAxMDAiPjxwYXRoIGQ9Ik0yNSw2NSBMMTUsNjUgTDE1LDUwIEwyNSwzMCBMNDAsMzAgTDQ1LDQ1IEwzNSw2NSBaIE0yMCw3MCBBNSw1IDAgMSwwIDIwLDgwIEE1LDUgMCAxLDAgMjAsNzAgTTM1LDcwIEE1LDUgMCAxLDAgMzUsODAgQTUsNSAwIDEwIDM1LDcwIiBmaWxsPSIjZmZmZmZmIiBmaWxsLW9wYWNpdHk9IjAuMTUiLz48L3N2Zz4=");
+    background-size: 80px 80px;
+    z-index: 1;
+    pointer-events: none;
 }
 
 .contenedor {
@@ -32,19 +45,18 @@ body {
     border: 3px solid rgba(255, 255, 255, 0.6); 
     box-shadow: 0 30px 60px rgba(40, 116, 130, 0.2), inset 0 0 20px rgba(255, 255, 255, 0.4);
     max-width: 90%;
-    z-index: 10;
-    transform: skewX(-2deg); /* Inclinación dinámica de velocidad */
+    z-index: 10; /* Se posiciona por encima del patrón de patines */
+    transform: skewX(-2deg); 
 }
 
 .patinaje-titulo {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif !important;
     font-size: 4.5rem;
     color: #ffffff;
     text-transform: uppercase;
     font-weight: 800;
     letter-spacing: 3px;
     font-style: italic;
-    /* Efecto de relieve y profundidad azulada */
     text-shadow: 
         -2px -2px 0 #287482,  
          2px -2px 0 #287482,
@@ -56,14 +68,15 @@ body {
 }
 
 .mensaje-principal {
-    font-family: 'Dancing Script', cursive; /* Letra cursiva fluida y elegante */
-    font-size: 2.5rem;
-    color: #1a4a53; /* Contraste oscuro óptimo para la lectura */
+    font-family: 'Dancing Script', cursive !important; /* Forzamos la tipografía fluida */
+    font-size: 2.6rem;
+    color: #1a4a53; 
     font-weight: 700;
+    line-height: 1.3;
 }
 
 .firma {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif !important;
     font-size: 1.3rem;
     color: #287482;
     margin-top: 25px;
@@ -71,7 +84,6 @@ body {
     letter-spacing: 1px;
 }
 
-/* Animación sutil de vaivén para simular el deslizamiento en pista */
 @keyframes deslizamiento {
     0% { transform: translateX(-4px); }
     100% { transform: translateX(4px); }
