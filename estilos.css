@@ -9,8 +9,8 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    /* Fondo con degradado azul hielo y destellos de pista */
-    background: radial-gradient(circle, #e0f7fa 0%, #80deea 40%, #006064 100%);
+    /* Fondo que combina el azul de la pista con un beige cálido y suave */
+    background: linear-gradient(135deg, #f5f2eb 0%, #bce6ec 50%, #5dbcd2 100%);
     font-family: 'Montserrat', sans-serif;
     overflow: hidden;
     position: relative;
@@ -18,15 +18,18 @@ body {
 
 .contenedor {
     text-align: center;
-    background: rgba(255, 255, 255, 0.25); /* Efecto cristal / hielo translúcido */
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    /* Fondo beige translúcido (efecto cristal elegante) */
+    background: rgba(245, 242, 235, 0.65); 
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     padding: 50px 60px;
     border-radius: 24px;
-    border: 3px solid rgba(255, 255, 255, 0.6); 
-    box-shadow: 0 20px 50px rgba(0, 96, 100, 0.3), inset 0 0 20px rgba(255, 255, 255, 0.4);
+    /* Borde sutil en tono azul cielo */
+    border: 3px solid rgba(93, 188, 210, 0.5); 
+    box-shadow: 0 20px 50px rgba(93, 188, 210, 0.25), inset 0 0 20px rgba(255, 255, 255, 0.6);
     max-width: 90%;
-    transform: skewX(-3deg); /* Inclinación dinámica que simula velocidad y movimiento */
+    z-index: 10; /* Se asegura de estar por encima de los patines de fondo */
+    transform: skewX(-2deg); /* Ligera inclinación de velocidad */
 }
 
 .patinaje-titulo {
@@ -35,60 +38,59 @@ body {
     text-transform: uppercase;
     font-weight: 800;
     letter-spacing: 3px;
-    font-style: italic; /* Aporta dinamismo */
-    /* Efecto de texto brillante y rápido */
+    font-style: italic;
+    /* Sombras en azul profundo para resaltar sobre el fondo claro */
     text-shadow: 
-        0 0 10px rgba(0, 229, 255, 0.8),
-        0 0 20px rgba(0, 229, 255, 0.5),
-        3px 3px 0px #006064;
+        -2px -2px 0 #3a9cb0,  
+         2px -2px 0 #3a9cb0,
+        -2px  2px 0 #3a9cb0,
+         2px  2px 0 #3a9cb0,
+         4px  4px 15px rgba(58, 156, 176, 0.6);
     margin-bottom: 20px;
-    animation: deslizamiento 2.5s ease-in-out infinite alternate;
+    animation: deslizamiento 3s ease-in-out infinite alternate;
 }
 
 .mensaje-principal {
-    font-family: 'Dancing Script', cursive; /* Letra fluida como las curvas al patinar */
-    font-size: 2.2rem;
-    color: #004d40;
-    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.3rem;
+    color: #2b5963; /* Azul oscuro suave para excelente lectura */
     line-height: 1.4;
-}
-
-/* Animación que simula un suave deslizamiento de lado a lado */
-@keyframes deslizamiento {
-    0% { transform: translateX(-5px); }
-    100% { transform: translateX(5px); }
-}
-
-/* --- DETALLES EXTRAS: DESTELLOS DE LA PISTA --- */
-.destello {
-    position: absolute;
-    font-size: 2.5rem;
-    color: #ffffff;
-    text-shadow: 0 0 15px rgba(0, 255, 255, 1);
-    opacity: 0.7;
-    animation: parpadeo 2s infinite ease-in-out;
-}
-.destello-1 {
-    top: 15%;
-    left: 15%;
-    animation-delay: 0s;
-}
-.destello-2 {
-    bottom: 15%;
-    right: 15%;
-    animation-delay: 1s;
-}
-
-@keyframes parpadeo {
-    0%, 100% { transform: scale(0.8); opacity: 0.4; }
-    50% { transform: scale(1.2); opacity: 0.9; }
 }
 
 .firma {
     font-size: 1.3rem;
-    color: #00796b;
+    color: #4ba6b8;
     margin-top: 25px;
     font-weight: bold;
     letter-spacing: 1px;
 }
+
+/* Animación de balanceo para el título */
+@keyframes deslizamiento {
+    0% { transform: translateX(-4px); }
+    100% { transform: translateX(4px); }
+}
+
+/* --- ESTILOS DE LOS PATINES FLOTANTES DE FONDO --- */
+.patin-fondo {
+    position: absolute;
+    font-size: 3.5rem;
+    opacity: 0.25; /* Transparencia para que no distraigan del mensaje */
+    filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.1));
+    z-index: 1;
+    animation: flotarPatin 6s ease-in-out infinite alternate;
+}
+
+/* Posiciones aleatorias en la pantalla */
+.patin-1 { top: 15%; left: 10%; animation-delay: 0s; }
+.patin-2 { top: 75%; left: 15%; animation-delay: 1.5s; transform: scaleX(-1); } /* Volteado */
+.patin-3 { top: 20%; right: 12%; animation-delay: 0.8s; }
+.patin-4 { top: 70%; right: 10%; animation-delay: 2.2s; transform: scaleX(-1); }
+
+/* Animación de levitación suave */
+@keyframes flotarPatin {
+    0% { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(-15px) rotate(8deg); }
+}
+
 
