@@ -10,18 +10,21 @@ body {
     align-items: center;
     height: 100vh;
     
-    /* CAPA 1: Siluetas de patines estáticas en color negro suave */
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='100' height='100' viewBox='0 0 100 100'><path d='M30 15h20l10 20 5 25H15l-5-20z' fill='%23000' fill-opacity='0.12'/><circle cx='23' cy='67' r='7' fill='%23000' fill-opacity='0.15'/><circle cx='40' cy='67' r='7' fill='%23000' fill-opacity='0.15'/><circle cx='57' cy='67' r='7' fill='%23000' fill-opacity='0.15'/><circle cx='74' cy='67' r='7' fill='%23000' fill-opacity='0.15'/></svg>"),
+    /* CAPA 1: Siluetas de mini patines negros estáticos codificados de forma ultra-segura */
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHBhdGggZD0iTTMwIDE1aDIwbDEwIDIwIDUgMjVIMTVsLTUtMjB6IiBmaWxsPSIjMDAwMDAwIiBmaWxsLW9wYWNpdHk9IjAuMTIiLz48Y2lyY2xlIGN4PSIyMyIgY3k9IjY3IiByPSI3IiBmaWxsPSIjMDAwMDAwIiBmaWxsLW9wYWNpdHk9IjAuMTUiLz48Y2lyY2xlIGN4PSI0MCIgY3k9IjY3IiByPSI3IiBmaWxsPSIjMDAwMDAwIiBmaWxsLW9wYWNpdHk9IjAuMTUiLz48Y2lyY2xlIGN4PSI1NyIgY3k9IjY3IiByPSI3IiBmaWxsPSIjMDAwMDAwIiBmaWxsLW9wYWNpdHk9IjAuMTUiLz48Y2lyY2xlIGN4PSI3NCIgY3k9IjY3IiByPSI3IiBmaWxsPSIjMDAwMDAwIiBmaWxsLW9wYWNpdHk9IjAuMTUiLz48L3N2Zz4="),
     
-    /* CAPA 2: Tu mezcla exacta de Café, Beige y Azul */
+    /* CAPA 2: Tu mezcla exacta de Café Chocolate, Beige Arena y Azul Cian de fondo */
     linear-gradient(135deg, #3e2723 0%, #d7ccc8 25%, #f5e6d3 50%, #00acc1 100%);
     
-    background-size: 80px 80px, auto;
+    /* Tamaño ajustable para hacer los patines tipo mini tapiz repetido */
+    background-size: 75px 75px, auto;
+    
     font-family: Arial, Helvetica, sans-serif;
     overflow: hidden;
     position: relative;
 }
 
+/* --- TARJETA VISUAL CENTRAL --- */
 .contenedor {
     text-align: center;
     background: rgba(245, 230, 211, 0.55); 
