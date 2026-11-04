@@ -9,8 +9,13 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    /* Fondo que combina el azul de la pista con un beige cálido y suave */
-    background: linear-gradient(135deg, #f5f2eb 0%, #bce6ec 50%, #5dbcd2 100%);
+    
+    /* CAPA 1: Patrón repetitivo de siluetas de patines integradas sutilmente en el fondo */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://w3.org' width='80' height='80' viewBox='0 0 100 100'%3E%3Cpath d='M20,70 L40,70 L50,40 L35,20 L25,20 L20,40 Z M30,75 A5,5 0 1,1 30,85 A5,5 0 1,1 30,75 M45,75 A5,5 0 1,1 45,85 A5,5 0 1,1 45,75' fill='%23ffffff' fill-opacity='0.12'/%3E%3C/svg%3E"), 
+    
+    /* CAPA 2: Degradado suave que fusiona el azul cian con el beige cálido */
+    linear-gradient(135deg, #f3ede2 0%, #a2dce4 50%, #4daec2 100%);
+    
     font-family: 'Montserrat', sans-serif;
     overflow: hidden;
     position: relative;
@@ -18,78 +23,56 @@ body {
 
 .contenedor {
     text-align: center;
-    /* Fondo beige translúcido (efecto cristal elegante) */
-    background: rgba(245, 242, 235, 0.65); 
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    /* Efecto cristal translúcido tintado en beige suave */
+    background: rgba(245, 242, 235, 0.45); 
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     padding: 50px 60px;
     border-radius: 24px;
-    /* Borde sutil en tono azul cielo */
-    border: 3px solid rgba(93, 188, 210, 0.5); 
-    box-shadow: 0 20px 50px rgba(93, 188, 210, 0.25), inset 0 0 20px rgba(255, 255, 255, 0.6);
+    border: 3px solid rgba(255, 255, 255, 0.6); 
+    box-shadow: 0 30px 60px rgba(40, 116, 130, 0.2), inset 0 0 20px rgba(255, 255, 255, 0.4);
     max-width: 90%;
-    z-index: 10; /* Se asegura de estar por encima de los patines de fondo */
-    transform: skewX(-2deg); /* Ligera inclinación de velocidad */
+    z-index: 10;
+    transform: skewX(-2deg); /* Inclinación dinámica de velocidad */
 }
 
 .patinaje-titulo {
+    font-family: 'Montserrat', sans-serif;
     font-size: 4.5rem;
     color: #ffffff;
     text-transform: uppercase;
     font-weight: 800;
     letter-spacing: 3px;
     font-style: italic;
-    /* Sombras en azul profundo para resaltar sobre el fondo claro */
+    /* Efecto de relieve y profundidad azulada */
     text-shadow: 
-        -2px -2px 0 #3a9cb0,  
-         2px -2px 0 #3a9cb0,
-        -2px  2px 0 #3a9cb0,
-         2px  2px 0 #3a9cb0,
-         4px  4px 15px rgba(58, 156, 176, 0.6);
+        -2px -2px 0 #287482,  
+         2px -2px 0 #287482,
+        -2px  2px 0 #287482,
+         2px  2px 0 #287482,
+         4px  4px 15px rgba(40, 116, 130, 0.5);
     margin-bottom: 20px;
     animation: deslizamiento 3s ease-in-out infinite alternate;
 }
 
 .mensaje-principal {
-    font-family: 'Dancing Script', cursive;
-    font-size: 2.3rem;
-    color: #2b5963; /* Azul oscuro suave para excelente lectura */
-    line-height: 1.4;
+    font-family: 'Dancing Script', cursive; /* Letra cursiva fluida y elegante */
+    font-size: 2.5rem;
+    color: #1a4a53; /* Contraste oscuro óptimo para la lectura */
+    font-weight: 700;
 }
 
 .firma {
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.3rem;
-    color: #4ba6b8;
+    color: #287482;
     margin-top: 25px;
     font-weight: bold;
     letter-spacing: 1px;
 }
 
-/* Animación de balanceo para el título */
+/* Animación sutil de vaivén para simular el deslizamiento en pista */
 @keyframes deslizamiento {
     0% { transform: translateX(-4px); }
     100% { transform: translateX(4px); }
 }
-
-/* --- ESTILOS DE LOS PATINES FLOTANTES DE FONDO --- */
-.patin-fondo {
-    position: absolute;
-    font-size: 3.5rem;
-    opacity: 0.25; /* Transparencia para que no distraigan del mensaje */
-    filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.1));
-    z-index: 1;
-    animation: flotarPatin 6s ease-in-out infinite alternate;
-}
-
-/* Posiciones aleatorias en la pantalla */
-.patin-1 { top: 15%; left: 10%; animation-delay: 0s; }
-.patin-2 { top: 75%; left: 15%; animation-delay: 1.5s; transform: scaleX(-1); } /* Volteado */
-.patin-3 { top: 20%; right: 12%; animation-delay: 0.8s; }
-.patin-4 { top: 70%; right: 10%; animation-delay: 2.2s; transform: scaleX(-1); }
-
-/* Animación de levitación suave */
-@keyframes flotarPatin {
-    0% { transform: translateY(0) rotate(0deg); }
-    100% { transform: translateY(-15px) rotate(8deg); }
-}
-
