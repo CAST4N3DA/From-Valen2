@@ -9,74 +9,81 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    
-    /* Degradado base que combina el beige suave (arriba izquierda) con el azul patinaje (abajo derecha) */
-    background-color: #f3ede2;
-    background-image: linear-gradient(135deg, #f3ede2 0%, #a2dce4 50%, #4daec2 100%);
-    
-    font-family: 'Montserrat', sans-serif;
+    /* Forzamos el degradado de Beige a Azul con colores sólidos directos */
+    background: #f3ede2;
+    background: linear-gradient(135deg, #f3ede2 0%, #a2dce4 55%, #4daec2 100%);
+    font-family: Arial, Helvetica, sans-serif;
     overflow: hidden;
     position: relative;
 }
 
-/* Capa independiente para los patines integrados en el fondo */
-body::before {
-    content: "";
+/* --- PATINES INTEGRADOS EN EL FONDO --- */
+.patines-fondo {
     position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
-    /* Patrón de siluetas de patines en formato de alta compatibilidad */
-    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDEwMCAxMDAiPjxwYXRoIGQ9Ik0yNSw2NSBMMTUsNjUgTDE1LDUwIEwyNSwzMCBMNDAsMzAgTDQ1LDQ1IEwzNSw2NSBaIE0yMCw3MCBBNSw1IDAgMSwwIDIwLDgwIEE1LDUgMCAxLDAgMjAsNzAgTTM1LDcwIEE1LDUgMCAxLDAgMzUsODAgQTUsNSAwIDEwIDM1LDcwIiBmaWxsPSIjZmZmZmZmIiBmaWxsLW9wYWNpdHk9IjAuMTUiLz48L3N2Zz4=");
-    background-size: 80px 80px;
-    z-index: 1;
+    top: 0;
+    left: 0;
     pointer-events: none;
+    z-index: 1;
 }
 
+.patin {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+}
+
+/* Posicionamiento en las 4 esquinas del fondo */
+.p1 { top: 10%; left: 8%; transform: rotate(-15deg); }
+.p2 { top: 70%; left: 12%; transform: rotate(10deg); }
+.p3 { top: 12%; right: 10%; transform: rotate(15deg); }
+.p4 { top: 68%; right: 8%; transform: rotate(-20deg); }
+
+
+/* --- TARJETA CONTENEDORA --- */
 .contenedor {
     text-align: center;
-    /* Efecto cristal translúcido tintado en beige suave */
-    background: rgba(245, 242, 235, 0.45); 
+    background: rgba(245, 242, 235, 0.5); 
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     padding: 50px 60px;
     border-radius: 24px;
-    border: 3px solid rgba(255, 255, 255, 0.6); 
-    box-shadow: 0 30px 60px rgba(40, 116, 130, 0.2), inset 0 0 20px rgba(255, 255, 255, 0.4);
+    border: 3px solid rgba(255, 255, 255, 0.7); 
+    box-shadow: 0 30px 60px rgba(40, 116, 130, 0.2);
     max-width: 90%;
-    z-index: 10; /* Se posiciona por encima del patrón de patines */
-    transform: skewX(-2deg); 
+    z-index: 10;
+    transform: skewX(-3deg); 
 }
 
 .patinaje-titulo {
-    font-family: 'Montserrat', sans-serif !important;
     font-size: 4.5rem;
     color: #ffffff;
     text-transform: uppercase;
-    font-weight: 800;
-    letter-spacing: 3px;
+    font-weight: 900;
+    letter-spacing: 2px;
     font-style: italic;
+    /* Efecto 3D marcado sobre el fondo */
     text-shadow: 
         -2px -2px 0 #287482,  
          2px -2px 0 #287482,
         -2px  2px 0 #287482,
          2px  2px 0 #287482,
-         4px  4px 15px rgba(40, 116, 130, 0.5);
-    margin-bottom: 20px;
-    animation: deslizamiento 3s ease-in-out infinite alternate;
+         4px  4px 0px rgba(26, 74, 83, 0.6);
+    margin-bottom: 25px;
 }
 
 .mensaje-principal {
-    font-family: 'Dancing Script', cursive !important; /* Forzamos la tipografía fluida */
-    font-size: 2.6rem;
+    /* Usamos tipografías cursivas nativas que están en cualquier computadora */
+    font-family: 'Comic Sans MS', 'Brush Script MT', cursive, sans-serif; 
+    font-size: 2.4rem;
     color: #1a4a53; 
-    font-weight: 700;
-    line-height: 1.3;
+    font-weight: bold;
+    line-height: 1.4;
+    transform: skewX(3deg); /* Modifica el texto para balancear la inclinación del cuadro */
 }
 
 .firma {
-    font-family: 'Montserrat', sans-serif !important;
     font-size: 1.3rem;
     color: #287482;
     margin-top: 25px;
@@ -84,7 +91,3 @@ body::before {
     letter-spacing: 1px;
 }
 
-@keyframes deslizamiento {
-    0% { transform: translateX(-4px); }
-    100% { transform: translateX(4px); }
-}
