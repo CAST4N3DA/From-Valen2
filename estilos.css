@@ -10,84 +10,32 @@ body {
     align-items: center;
     height: 100vh;
     
-    /* MEZCLA SOLICITADA: Degradado suave de Café Chocolate, pasando por Beige Arena, hasta Azul Cian Vivo */
-    background: #3e2723;
-    background: linear-gradient(135deg, #3e2723 0%, #d7ccc8 25%, #f5e6d3 50%, #00acc1 100%);
+    /* CAPA 1: Patrón estático de mini patines negros en silueta (Ultra compatible en base64) */
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3MCIgaGVpZ2h0PSI3MCIgdmlld0JveD0iMCAwIDEwMCAxMDAiPjxwYXRoIGQ9Ik00NSwxMCBMMjUsMTUgTDEwLDM1IEw4LDYwIEw0NSw2MCBMNDIsNDUgTDYwLDQwIEw3NSw0NSBMOTAsNjAgTDg4LDUwIEw2NSwyMCBaIE0xOCw2OCBBNyw3IDAgMSwwIDE4LDgyIEE3LDcgMCAxLDAgMTgsNjggTTM4LDY4IEE3LDcgMCAxLDAgMzgsODIgQTcsNyAwIDEwIDM4LDY4IE01OCw2OCBBNyw3IDAgMSwwIDU4LDgyIEE3LDcgMCAxLDAgNTgsNjggTTc4LDY4IEE3LDcgMCAxLDAgNzgsODIgQTcsNyAwIDEwIDc4LDY4IiBmaWxsPSIjMDAwMDAwIiBmaWxsLW9wYWNpdHk9IjAuMTIiLz48L3N2Zz4="),
+    
+    /* CAPA 2: Tu degradado perfecto de Café chocolate a Beige Arena y Azul Cian */
+    linear-gradient(135deg, #3e2723 0%, #d7ccc8 25%, #f5e6d3 50%, #00acc1 100%);
+    
+    /* Tamaño en píxeles para regular qué tan grandes o mini se ven los patines repetidos */
+    background-size: 75px 75px, auto;
     
     font-family: Arial, Helvetica, sans-serif;
     overflow: hidden;
     position: relative;
 }
 
-/* --- SISTEMA DE PATINES EN MOVIMIENTO --- */
-.pista-patinaje {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    z-index: 5; /* Se cruzan dinámicamente en el entorno */
-}
-
-.patin-movil {
-    position: absolute;
-    font-size: 5.5rem; /* Patines grandes y súper claros */
-    filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.3));
-}
-
-/* Patín 1: Cruza rápido por la zona superior */
-.pm-1 {
-    top: 10%;
-    animation: patinarDerecha 8s linear infinite;
-}
-
-/* Patín 2: Cruza por el medio en sentido inverso (efecto espejo) */
-.pm-2 {
-    top: 45%;
-    transform: scaleX(-1);
-    animation: patinarIzquierda 12s linear infinite;
-    animation-delay: 2s;
-}
-
-/* Patín 3: Cruza por la parte inferior hacia la derecha */
-.pm-3 {
-    bottom: 10%;
-    animation: patinarDerecha 10s linear infinite;
-    animation-delay: 4s;
-}
-
-/* Animación de deslizamiento de Izquierda a Derecha con balanceo físico */
-@keyframes patinarDerecha {
-    0% { left: -150px; transform: translateY(0) rotate(0deg); }
-    25% { transform: translateY(-10px) rotate(5deg); }
-    55% { transform: translateY(5px) rotate(-3deg); }
-    75% { transform: translateY(-8px) rotate(4deg); }
-    100% { left: 110%; transform: translateY(0) rotate(0deg); }
-}
-
-/* Animación de deslizamiento de Derecha a Izquierda */
-@keyframes patinarIzquierda {
-    0% { right: -150px; transform: scaleX(-1) translateY(0) rotate(0deg); }
-    30% { transform: scaleX(-1) translateY(-15px) rotate(-6deg); }
-    70% { transform: scaleX(-1) translateY(10px) rotate(4deg); }
-    100% { right: 110%; transform: scaleX(-1) translateY(0) rotate(0deg); }
-}
-
-
 /* --- TARJETA VISUAL CENTRAL --- */
 .contenedor {
     text-align: center;
-    /* Base beige sólida con transparencia para que no oculte la transición de los colores de fondo */
-    background: rgba(245, 230, 211, 0.5); 
+    background: rgba(245, 230, 211, 0.55); 
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     padding: 50px 60px;
     border-radius: 24px;
     border: 3px solid #ffffff; 
-    box-shadow: 0 30px 60px rgba(62, 39, 37, 0.35);
+    box-shadow: 0 30px 60px rgba(62, 39, 35, 0.35);
     max-width: 90%;
-    z-index: 10; /* Se mantiene al frente para asegurar lectura estable */
+    z-index: 10; 
     transform: skewX(-3deg); 
 }
 
@@ -98,7 +46,6 @@ body {
     font-weight: 900;
     letter-spacing: 2px;
     font-style: italic;
-    /* Contorno café chocolate nítido */
     text-shadow: 
         -3px -3px 0 #3e2723, 
          3px -3px 0 #3e2723,
@@ -112,7 +59,7 @@ body {
 .mensaje-principal {
     font-family: 'Comic Sans MS', 'Brush Script MT', cursive, sans-serif; 
     font-size: 2.5rem;
-    color: #3e2723; /* Tono café oscuro nítido */
+    color: #3e2723; 
     font-weight: bold;
     line-height: 1.4;
     transform: skewX(3deg); 
@@ -120,7 +67,7 @@ body {
 
 .firma {
     font-size: 1.4rem;
-    color: #00acc1; /* Firma en azul cian para balancear el diseño */
+    color: #00acc1; 
     margin-top: 25px;
     font-weight: bold;
     letter-spacing: 1px;
