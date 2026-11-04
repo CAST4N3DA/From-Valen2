@@ -10,67 +10,16 @@ body {
     align-items: center;
     height: 100vh;
     
-    /* FONDO REVISADO: Degradado de Café Marrón a Beige Cálido, terminando en Azul Patinaje */
-    background: #6e473b;
-    background: linear-gradient(135deg, #5c3a21 0%, #d9c5b2 40%, #f5ebe0 60%, #4daec2 100%);
+    /* FONDO INTENSO: Transición marcada desde Café Profundo, pasando por Beige Crema, hasta el Azul de la pista */
+    background: #3e2723;
+    background: linear-gradient(135deg, #3e2723 0%, #d7ccc8 35%, #f5f5dc 60%, #00acc1 100%);
     
     font-family: Arial, Helvetica, sans-serif;
     overflow: hidden;
     position: relative;
 }
 
-/* --- CONTENEDOR PRINCIPAL (ESTILO CRISTAL MARRÓN/BEIGE) --- */
-.contenedor {
-    text-align: center;
-    /* Fondo café-beige translúcido para entonar con el fondo */
-    background: rgba(245, 235, 224, 0.45); 
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    padding: 50px 60px;
-    border-radius: 24px;
-    border: 3px solid rgba(255, 255, 255, 0.6); 
-    box-shadow: 0 30px 60px rgba(92, 58, 33, 0.25);
-    max-width: 90%;
-    z-index: 10;
-    transform: skewX(-3deg); 
-}
-
-.patinaje-titulo {
-    font-size: 4.5rem;
-    color: #ffffff;
-    text-transform: uppercase;
-    font-weight: 900;
-    letter-spacing: 2px;
-    font-style: italic;
-    /* Borde oscuro estilo café/marrón para resaltar sobre los tonos claros */
-    text-shadow: 
-        -2px -2px 0 #5c3a21,  
-         2px -2px 0 #5c3a21,
-        -2px  2px 0 #5c3a21,
-         2px  2px 0 #5c3a21,
-         4px  4px 0px rgba(26, 74, 83, 0.5);
-    margin-bottom: 25px;
-    animation: balanceoTitulo 3s ease-in-out infinite alternate;
-}
-
-.mensaje-principal {
-    font-family: 'Comic Sans MS', 'Brush Script MT', cursive, sans-serif; 
-    font-size: 2.4rem;
-    color: #3b2414; /* Color café oscuro profundo para una lectura perfecta */
-    font-weight: bold;
-    line-height: 1.4;
-    transform: skewX(3deg);
-}
-
-.firma {
-    font-size: 1.3rem;
-    color: #5c3a21;
-    margin-top: 25px;
-    font-weight: bold;
-    letter-spacing: 1px;
-}
-
-/* --- ANIMACIÓN EN MOVIMIENTO PARA LOS PATINES DE FONDO --- */
+/* --- PATINES EN MOVIMIENTO (MÁS VISIBLES) --- */
 .pista-patinaje {
     position: absolute;
     width: 100%;
@@ -83,42 +32,93 @@ body {
 
 .patin-movil {
     position: absolute;
-    animation: patinarLinea 12s linear infinite;
+    /* Animación continua para simular el deslizamiento en pista */
+    animation: patinarLinea 10s linear infinite;
 }
 
-/* Patín superior deslizándose de izquierda a derecha */
+/* Patín superior: viaja de izquierda a derecha */
 .pm-1 {
     top: 15%;
     left: -150px;
     animation-delay: 0s;
 }
 
-/* Patín inferior deslizándose en sentido contrario (volteado) */
+/* Patín inferior: viaja de derecha a izquierda (se aumentó la opacidad para que se note mucho más) */
 .pm-2 {
     bottom: 15%;
     right: -150px;
-    transform: scaleX(-1);
-    animation: patinarLineaInversa 15s linear infinite;
-    animation-delay: 3s;
+    animation: patinarLineaInversa 13s linear infinite;
+    animation-delay: 2s;
 }
 
-/* Animaciones de traslado por la pantalla */
+/* Trayectorias y balanceo de los patines */
 @keyframes patinarLinea {
-    0% { left: -150px; transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-    100% { left: 110%; transform: translateY(0); }
+    0% { left: -150px; transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(5deg); }
+    100% { left: 110%; transform: translateY(0) rotate(0deg); }
 }
 
 @keyframes patinarLineaInversa {
-    0% { right: -150px; transform: scaleX(-1) translateY(0); }
-    50% { transform: scaleX(-1) translateY(10px); }
-    100% { right: 110%; transform: scaleX(-1) translateY(0); }
+    0% { right: -150px; transform: scaleX(-1) translateY(0) rotate(0deg); }
+    50% { transform: scaleX(-1) translateY(15px) rotate(-5deg); }
+    100% { right: 110%; transform: scaleX(-1) translateY(0) rotate(0deg); }
 }
 
-/* Animación sutil del título */
+
+/* --- CUADRO DE TEXTO (ESTILO CRISTAL SELECCIONADO) --- */
+.contenedor {
+    text-align: center;
+    /* Fondo beige suave translúcido para fundirse elegantemente */
+    background: rgba(245, 245, 220, 0.6); 
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 50px 60px;
+    border-radius: 24px;
+    border: 3px solid #ffffff; 
+    box-shadow: 0 30px 60px rgba(62, 39, 35, 0.4);
+    max-width: 90%;
+    z-index: 10;
+    transform: skewX(-3deg); /* Inclinación de velocidad de la tarjeta */
+}
+
+.patinaje-titulo {
+    font-size: 4.5rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 2px;
+    font-style: italic;
+    /* Contorno café chocolate oscuro para un contraste perfecto */
+    text-shadow: 
+        -3px -3px 0 #3e2723,  
+         3px -3px 0 #3e2723,
+        -3px  3px 0 #3e2723,
+         3px  3px 0 #3e2723,
+         5px  5px 15px rgba(0, 0, 0, 0.4);
+    margin-bottom: 25px;
+    animation: balanceoTitulo 3s ease-in-out infinite alternate;
+}
+
+.mensaje-principal {
+    /* Combinación de tipografías cursivas nativas del sistema */
+    font-family: 'Comic Sans MS', 'Brush Script MT', cursive, sans-serif; 
+    font-size: 2.5rem;
+    color: #3e2723; /* Texto en café chocolate oscuro para máxima legibilidad */
+    font-weight: bold;
+    line-height: 1.4;
+    transform: skewX(3deg); /* Equilibra la inclinación de la tarjeta */
+}
+
+.firma {
+    font-size: 1.4rem;
+    color: #5d4037;
+    margin-top: 25px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Animación sutil de vaivén para el título principal */
 @keyframes balanceoTitulo {
     0% { transform: translateX(-4px) rotate(-1deg); }
     100% { transform: translateX(4px) rotate(1deg); }
 }
-
-
