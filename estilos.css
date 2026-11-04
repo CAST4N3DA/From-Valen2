@@ -10,21 +10,18 @@ body {
     align-items: center;
     height: 100vh;
     
-    /* CAPA 1: Patrón estático de mini patines negros en silueta (Ultra compatible en base64) */
-    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3MCIgaGVpZ2h0PSI3MCIgdmlld0JveD0iMCAwIDEwMCAxMDAiPjxwYXRoIGQ9Ik00NSwxMCBMMjUsMTUgTDEwLDM1IEw4LDYwIEw0NSw2MCBMNDIsNDUgTDYwLDQwIEw3NSw0NSBMOTAsNjAgTDg4LDUwIEw2NSwyMCBaIE0xOCw2OCBBNyw3IDAgMSwwIDE4LDgyIEE3LDcgMCAxLDAgMTgsNjggTTM4LDY4IEE3LDcgMCAxLDAgMzgsODIgQTcsNyAwIDEwIDM4LDY4IE01OCw2OCBBNyw3IDAgMSwwIDU4LDgyIEE3LDcgMCAxLDAgNTgsNjggTTc4LDY4IEE3LDcgMCAxLDAgNzgsODIgQTcsNyAwIDEwIDc4LDY4IiBmaWxsPSIjMDAwMDAwIiBmaWxsLW9wYWNpdHk9IjAuMTIiLz48L3N2Zz4="),
+    /* CAPA 1: Siluetas de patines estáticas en color negro suave */
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='100' height='100' viewBox='0 0 100 100'><path d='M30 15h20l10 20 5 25H15l-5-20z' fill='%23000' fill-opacity='0.12'/><circle cx='23' cy='67' r='7' fill='%23000' fill-opacity='0.15'/><circle cx='40' cy='67' r='7' fill='%23000' fill-opacity='0.15'/><circle cx='57' cy='67' r='7' fill='%23000' fill-opacity='0.15'/><circle cx='74' cy='67' r='7' fill='%23000' fill-opacity='0.15'/></svg>"),
     
-    /* CAPA 2: Tu degradado perfecto de Café chocolate a Beige Arena y Azul Cian */
+    /* CAPA 2: Tu mezcla exacta de Café, Beige y Azul */
     linear-gradient(135deg, #3e2723 0%, #d7ccc8 25%, #f5e6d3 50%, #00acc1 100%);
     
-    /* Tamaño en píxeles para regular qué tan grandes o mini se ven los patines repetidos */
-    background-size: 75px 75px, auto;
-    
+    background-size: 80px 80px, auto;
     font-family: Arial, Helvetica, sans-serif;
     overflow: hidden;
     position: relative;
 }
 
-/* --- TARJETA VISUAL CENTRAL --- */
 .contenedor {
     text-align: center;
     background: rgba(245, 230, 211, 0.55); 
@@ -66,11 +63,13 @@ body {
 }
 
 .firma {
-    font-size: 1.4rem;
+    font-family: 'Comic Sans MS', 'Brush Script MT', cursive, sans-serif;
+    font-size: 1.8rem;
     color: #00acc1; 
     margin-top: 25px;
     font-weight: bold;
     letter-spacing: 1px;
+    transform: skewX(3deg);
 }
 
 @keyframes balanceoTitulo {
