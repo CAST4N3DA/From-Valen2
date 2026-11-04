@@ -27,7 +27,7 @@ body {
     background: rgba(255, 255, 255, 0.65); 
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
-    padding: 40px 30px;
+    padding: 45px 30px;
     border-radius: 24px;
     border: 3px solid #ffffff; 
     box-shadow: 0 20px 50px rgba(62, 39, 35, 0.25);
@@ -51,27 +51,29 @@ body {
         -2px  2px 0 #3e2723,
          2px  2px 0 #3e2723,
          4px  4px 10px rgba(0, 0, 0, 0.25);
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     animation: balanceoTitulo 3s ease-in-out infinite alternate;
 }
 
+/* --- NUEVA LETRA CENTRAL: MODERNA, ESTILIZADA Y MUY LEGIBLE --- */
 .mensaje-principal {
-    font-family: 'Comic Sans MS', 'Brush Script MT', cursive, sans-serif; 
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.6rem;
     color: #3e2723; 
-    font-weight: bold;
-    line-height: 1.4;
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: -0.5px;
     transform: skewX(3deg); 
 }
 
-/* --- NUEVA LETRA DE ABAJO: COMPACTA, MODERNA Y SIN SERIFAS --- */
+/* --- LETRA DE ABAJO: COMPACTA Y MODERNA --- */
 .firma {
     font-family: 'Arial Black', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     font-size: 1.1rem;
-    color: #00acc1; /* Manteniendo el azul cian destacado */
-    text-transform: uppercase; /* Hace que se vea más compacta y estructurada */
-    letter-spacing: 1px; /* Espaciado moderno entre caracteres */
-    margin-top: 25px;
+    color: #00acc1; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+    margin-top: 30px;
     font-weight: 900;
     transform: skewX(3deg);
 }
@@ -79,20 +81,20 @@ body {
 /* --- AJUSTES PARA PANTALLAS GRANDES (COMPUTADORA) --- */
 @media (min-width: 768px) {
     .contenedor {
-        padding: 50px 60px;
+        padding: 55px 60px;
     }
     .patinaje-titulo {
         font-size: 4.5rem;
     }
     .mensaje-principal {
-        font-size: 2.5rem;
+        font-size: 2.4rem;
     }
     .firma {
         font-size: 1.5rem;
     }
 }
 
-/* --- SISTEMA DE EMOJIS EN MOVIMIENTO CONTINUO --- */
+/* --- SISTEMA DE EMOJIS GIGANTES EN MOVIMIENTO --- */
 .pista-patinaje {
     position: absolute;
     width: 100%;
@@ -105,32 +107,32 @@ body {
 
 .patin-movil {
     position: absolute;
-    font-size: 4rem; /* Tamaño ideal del emoji para celulares */
-    filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.2));
+    font-size: 7rem; /* Emojis considerablemente más grandes para celular */
+    filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.25));
 }
 
 @media (min-width: 768px) {
     .patin-movil {
-        font-size: 6rem; /* Tamaño más grande para pantallas de computadora */
+        font-size: 9rem; /* Gigantes en pantallas de computadora */
     }
 }
 
-/* Patín 1: Desliza de izquierda a derecha en la zona de arriba */
+/* Patín 1: Desliza por la parte de arriba */
 .pm-1 {
-    top: 8%;
-    animation: patinarDerecha 9s linear infinite;
+    top: 6%;
+    animation: patinarDerecha 10s linear infinite;
 }
 
-/* Patín 2: Desliza invertido en la zona de abajo */
+/* Patín 2: Desliza por la parte de abajo */
 .pm-2 {
-    bottom: 8%;
-    animation: patinarIzquierda 13s linear infinite;
-    animation-delay: 2s;
+    bottom: 6%;
+    animation: patinarIzquierda 14s linear infinite;
+    animation-delay: 2.5s;
 }
 
 /* Animaciones de traslado */
 @keyframes patinarDerecha {
-    0% { left: -120px; transform: translateY(0) rotate(0deg); }
+    0% { left: -160px; transform: translateY(0) rotate(0deg); }
     25% { transform: translateY(-8px) rotate(4deg); }
     50% { transform: translateY(4px) rotate(-2deg); }
     75% { transform: translateY(-6px) rotate(3deg); }
@@ -138,7 +140,7 @@ body {
 }
 
 @keyframes patinarIzquierda {
-    0% { right: -120px; transform: scaleX(-1) translateY(0) rotate(0deg); }
+    0% { right: -160px; transform: scaleX(-1) translateY(0) rotate(0deg); }
     33% { transform: scaleX(-1) translateY(-12px) rotate(-5deg); }
     66% { transform: scaleX(-1) translateY(8px) rotate(3deg); }
     100% { right: 110%; transform: scaleX(-1) translateY(0) rotate(0deg); }
@@ -148,6 +150,7 @@ body {
     0% { transform: translateX(-3px) rotate(-0.5deg); }
     100% { transform: translateX(3px) rotate(0.5deg); }
 }
+
 
 @keyframes balanceoTitulo {
     0% { transform: translateX(-3px) rotate(-0.5deg); }
