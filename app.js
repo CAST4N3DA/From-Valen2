@@ -1,3 +1,4 @@
-// Archivo de scripts listo para futuras interacciones de patinaje.
-console.log("¡A rodar y brillar en la pista!");
+// Fondo configurado. Listo para futuras interacciones en la pista.
+console.log("Entorno de patinaje listo con fondo integrado.");
+
 
