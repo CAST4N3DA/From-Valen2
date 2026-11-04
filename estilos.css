@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* Fondo con degradado verde pantano profundo */
+    background: radial-gradient(circle, #7bbf43 0%, #4d7c26 60%, #1e330d 100%);
+    font-family: 'Almendra', serif;
+    overflow: hidden;
+    position: relative;
+}
+
+.contenedor {
+    text-align: center;
+    background: rgba(43, 29, 14, 0.85); /* Color marrón tronco/tierra con opacidad */
+    padding: 50px 60px;
+    border-radius: 12px;
+    border: 5px solid #b0c400; /* Borde verde lima Shrek */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), inset 0 0 20px rgba(0, 0, 0, 0.5);
+    max-width: 90%;
+    transform: rotate(-1deg); /* Ligera inclinación cómica al estilo de la peli */
+}
+
+.shrek-titulo {
+    font-size: 4.5rem;
+    color: #b0c400; /* Verde ogro brillante */
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    /* Efecto 3D y borde oscuro en el texto parecido al logotipo */
+    text-shadow: 
+        -3px -3px 0 #2b1d0e,  
+         3px -3px 0 #2b1d0e,
+        -3px  3px 0 #2b1d0e,
+         3px  3px 0 #2b1d0e,
+         4px  4px 0 #110a04,
+         6px  6px 15px rgba(0,0,0,0.8);
+    margin-bottom: 10px;
+    animation: flotar 3s ease-in-out infinite;
+}
+
+.subtitulo {
+    font-size: 1.5rem;
+    color: #e1dfb6; /* Color pergamino viejo */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    font-style: italic;
+}
+
+/* Animación sutil de levitación para el texto principal */
+@keyframes flotar {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+/* --- DETALLES EXTRAS: LAS OREJAS DE OGRO --- */
+.oreja {
+    position: absolute;
+    width: 60px;
+    height: 35px;
+    background-color: #b0c400;
+    border: 3px solid #2b1d0e;
+    border-radius: 50% 50% 0 0;
+    top: 10%;
+    opacity: 0.8;
+}
+.oreja::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #4d7c26;
+    border-radius: 50%;
+    bottom: -5px;
+    left: 17px;
+}
+.oreja-izquierda {
+    left: 10%;
+    transform: rotate(-30deg);
+}
+.oreja-derecha {
+    right: 10%;
+    transform: rotate(30deg);
+}
+
+.firma {
+    font-size: 1.2rem;
+    color: #b0c400; /* Verde Shrek para resaltar tu nombre */
+    margin-top: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    opacity: 0.9;
+}
