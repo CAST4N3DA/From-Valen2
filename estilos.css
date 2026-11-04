@@ -9,90 +9,86 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    /* Fondo con degradado verde pantano profundo */
-    background: radial-gradient(circle, #7bbf43 0%, #4d7c26 60%, #1e330d 100%);
-    font-family: 'Almendra', serif;
+    /* Fondo con degradado azul hielo y destellos de pista */
+    background: radial-gradient(circle, #e0f7fa 0%, #80deea 40%, #006064 100%);
+    font-family: 'Montserrat', sans-serif;
     overflow: hidden;
     position: relative;
 }
 
 .contenedor {
     text-align: center;
-    background: rgba(43, 29, 14, 0.85); /* Color marrón tronco/tierra con opacidad */
+    background: rgba(255, 255, 255, 0.25); /* Efecto cristal / hielo translúcido */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     padding: 50px 60px;
-    border-radius: 12px;
-    border: 5px solid #b0c400; /* Borde verde lima Shrek */
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), inset 0 0 20px rgba(0, 0, 0, 0.5);
+    border-radius: 24px;
+    border: 3px solid rgba(255, 255, 255, 0.6); 
+    box-shadow: 0 20px 50px rgba(0, 96, 100, 0.3), inset 0 0 20px rgba(255, 255, 255, 0.4);
     max-width: 90%;
-    transform: rotate(-1deg); /* Ligera inclinación cómica al estilo de la peli */
+    transform: skewX(-3deg); /* Inclinación dinámica que simula velocidad y movimiento */
 }
 
-.shrek-titulo {
+.patinaje-titulo {
     font-size: 4.5rem;
-    color: #b0c400; /* Verde ogro brillante */
+    color: #ffffff;
     text-transform: uppercase;
-    font-weight: bold;
-    letter-spacing: 2px;
-    /* Efecto 3D y borde oscuro en el texto parecido al logotipo */
+    font-weight: 800;
+    letter-spacing: 3px;
+    font-style: italic; /* Aporta dinamismo */
+    /* Efecto de texto brillante y rápido */
     text-shadow: 
-        -3px -3px 0 #2b1d0e,  
-         3px -3px 0 #2b1d0e,
-        -3px  3px 0 #2b1d0e,
-         3px  3px 0 #2b1d0e,
-         4px  4px 0 #110a04,
-         6px  6px 15px rgba(0,0,0,0.8);
-    margin-bottom: 10px;
-    animation: flotar 3s ease-in-out infinite;
+        0 0 10px rgba(0, 229, 255, 0.8),
+        0 0 20px rgba(0, 229, 255, 0.5),
+        3px 3px 0px #006064;
+    margin-bottom: 20px;
+    animation: deslizamiento 2.5s ease-in-out infinite alternate;
 }
 
-.subtitulo {
-    font-size: 1.5rem;
-    color: #e1dfb6; /* Color pergamino viejo */
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
-    font-style: italic;
+.mensaje-principal {
+    font-family: 'Dancing Script', cursive; /* Letra fluida como las curvas al patinar */
+    font-size: 2.2rem;
+    color: #004d40;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+    line-height: 1.4;
 }
 
-/* Animación sutil de levitación para el texto principal */
-@keyframes flotar {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
+/* Animación que simula un suave deslizamiento de lado a lado */
+@keyframes deslizamiento {
+    0% { transform: translateX(-5px); }
+    100% { transform: translateX(5px); }
 }
 
-/* --- DETALLES EXTRAS: LAS OREJAS DE OGRO --- */
-.oreja {
+/* --- DETALLES EXTRAS: DESTELLOS DE LA PISTA --- */
+.destello {
     position: absolute;
-    width: 60px;
-    height: 35px;
-    background-color: #b0c400;
-    border: 3px solid #2b1d0e;
-    border-radius: 50% 50% 0 0;
-    top: 10%;
-    opacity: 0.8;
+    font-size: 2.5rem;
+    color: #ffffff;
+    text-shadow: 0 0 15px rgba(0, 255, 255, 1);
+    opacity: 0.7;
+    animation: parpadeo 2s infinite ease-in-out;
 }
-.oreja::after {
-    content: '';
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background-color: #4d7c26;
-    border-radius: 50%;
-    bottom: -5px;
-    left: 17px;
+.destello-1 {
+    top: 15%;
+    left: 15%;
+    animation-delay: 0s;
 }
-.oreja-izquierda {
-    left: 10%;
-    transform: rotate(-30deg);
+.destello-2 {
+    bottom: 15%;
+    right: 15%;
+    animation-delay: 1s;
 }
-.oreja-derecha {
-    right: 10%;
-    transform: rotate(30deg);
+
+@keyframes parpadeo {
+    0%, 100% { transform: scale(0.8); opacity: 0.4; }
+    50% { transform: scale(1.2); opacity: 0.9; }
 }
 
 .firma {
-    font-size: 1.2rem;
-    color: #b0c400; /* Verde Shrek para resaltar tu nombre */
-    margin-top: 20px;
+    font-size: 1.3rem;
+    color: #00796b;
+    margin-top: 25px;
     font-weight: bold;
     letter-spacing: 1px;
-    opacity: 0.9;
 }
+
